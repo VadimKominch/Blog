@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" th:href="@{css/main.css}">
+</head>
+<body>
+    <header>
+        <ul>
+            <li class="nav-tab">Categories</li>
+            <li class="nav-tab">Archives</li>
+            <li class="nav-tab">More info</li>
+            <li class="nav-tab">About me</li>
+        </ul>
+    </header>
+    <div class="container">
+        <aside class="left">
+
+        </aside>
+        <main class="main">
+            <th:block th:each="post : ${posts}">
+            <div class="articles">
+                <article class="post">
+                    <div class="photo"><img src="" alt=""></div>
+                    <h2 class="title" th:text="${post.articleName}"></h2>
+                    <div class="author"></div>
+                    <div class="time"></div>
+                    <p class="article" th:text="${post.articleText}"></p>
+                </article>
+            </div>
+                </th:block>
+        </main>
+        <aside class="right"></aside>
+    </div>
+    <div class="pagination">
+        <ul class="pagination-list">
+            <li class="pagination-tab"></li>
+            <li class="pagination-tab"></li>
+            <li class="pagination-tab"></li>
+        </ul>
+    </div>
+<footer></footer>
+</body>
+</html>
