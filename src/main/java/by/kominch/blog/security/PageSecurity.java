@@ -13,8 +13,18 @@ public class PageSecurity extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
                 .authorizeRequests()
-                .antMatchers( "/", "index")
-                .permitAll();
+                .antMatchers("/", "index")
+                .permitAll()
+                .antMatchers("/login_page")
+                .permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login_page")
+                .loginProcessingUrl("/login")
+                .defaultSuccessUrl("/get_info", true)
+                .failureUrl("/login.html?error=true");
     }
 }
