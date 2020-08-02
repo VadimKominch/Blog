@@ -1,7 +1,6 @@
 package by.kominch.blog.security;
 
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -16,6 +15,8 @@ public class PageSecurity extends WebSecurityConfigurerAdapter {
                 .csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/", "index")
+                .permitAll()
+                .antMatchers("/article","/article/add","/get_info")
                 .permitAll()
                 .antMatchers("/login_page")
                 .permitAll()

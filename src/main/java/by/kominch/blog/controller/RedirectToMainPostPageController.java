@@ -23,7 +23,7 @@ public class RedirectToMainPostPageController {
 
     @GetMapping(value="/get_info")
     private String getPage(Model model) {
-        Pageable page = PageRequest.of(0,5);
+        Pageable page = PageRequest.of(0,15);
         List<Article> articleList = articleRepository.findAll(page).toList();
         model.addAttribute("posts",articleList);
         return "main";
