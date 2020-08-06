@@ -18,3 +18,26 @@ header {
     width: 100%;
     background-color: aqua;
 }
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    width:70%;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.post {
+    height: 200px;
+    width:90%;
+}
+
+.photo{
+    width:100%;
+}
+

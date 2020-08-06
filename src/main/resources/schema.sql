@@ -3,7 +3,7 @@ create table if not exists `Users`
     `id`       int(11)     NOT NULL AUTO_INCREMENT,
     `Login`    varchar(20) NOT NULL,
     `Password` varchar(20) NOT NULL,
-    `Username` varchar(20) NOT NULL,
+    `user_name` varchar(20) NOT NULL,
     PRIMARY KEY (`id`)
 );
 

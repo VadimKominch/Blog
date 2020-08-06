@@ -8,16 +8,13 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
 
     private String login;
     private String password;
     private String userName;
-
-    @OneToMany
-    private Set<Article> articles;
 
     @Column(name = "Login")
     public String getLogin() {
@@ -37,7 +34,7 @@ public class User {
         this.password = password;
     }
 
-    @Column(name = "Password")
+    @Column(name = "user_name")
     public String getUserName() {
         return userName;
     }
